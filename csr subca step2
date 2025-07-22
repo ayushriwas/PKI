@@ -1,0 +1,14 @@
+Directories: 
+      Certs 
+      crl 
+      csr 
+      newcerts 
+      private
+Files:
+      Index.txt
+      Index.txt.attr
+      Echo  1000>serial
+      Echo 1000>crlnumber
+      Download subca.cnf —--------edit the path on CA_default section
+
+openssl req -config subca.cnf -new -sha256 -key private/subca.key.pem -out csr/subca.csr.pem
