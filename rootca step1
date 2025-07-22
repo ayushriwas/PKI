@@ -1,0 +1,21 @@
+ca
+      certs 
+      crl 
+      crlnumber
+      newcerts 
+      Index.txt  —--------------------echo 100 > serial       echo 100 > crlnumber
+      Index.txt.attr
+      Rootca.cnf  —-------------------download from server 
+      private    —---------------------700 permission
+      serial
+      Subca 
+          certs 
+          Csr
+
+rootca.cnf
+Edit is on dir line 
+[CA_default]
+/root/ca    to     /home/shuhari/ca
+
+openssl genrsa -aes256 -out private/ca.key.pem 4096
+openssl req -config rootca.cnf -key private/ca.key.pem -new -x509 -days 7300 -sha256 -extensions v3_ca -out certs/ca.cert.pem
