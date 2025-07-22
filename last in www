@@ -1,0 +1,12 @@
+in www files
+Files 
+ca.cert.pem
+Subca.cert.pem
+www.shuhari.local.cert.pem
+
+cat www.shuhari.local.cert.pem subca.cert.pem ca.cert.pem >
+www.shuhari.local.cert.chain.pem
+
+
+sudo a2enmod ssl
+Sudo a2ensite default-ssl
